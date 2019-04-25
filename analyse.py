@@ -2,8 +2,9 @@ from PIL import Image
 
 
 def main():
-    with open('test.txt', 'w+') as f:
-        f.write(str(conv_to_pix('images/cap.jpg')))
+    FILENAME = 'images/cap.jpg'
+
+    pixels = conv_to_pix(FILENAME)
 
 
 def conv_to_pix(filename):

@@ -1,3 +1,3 @@
 #!/bin/bash
-fswebcam images/cap.jpg
+fswebcam -q images/cap.jpg
 python analyse.py
