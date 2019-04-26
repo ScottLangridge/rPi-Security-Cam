@@ -3,6 +3,7 @@ from PIL import Image
 from time import sleep
 from math import sqrt
 import statistics as stat
+import datetime
 
 
 FILENAME = 'images/cap.jpg'
@@ -108,7 +109,12 @@ def detect_motion(image, mean, pix_devs, changed_recently):
 
 
 def detected():
-    print('MOTION DETECTED')
+    now = str(datetime.datetime.now()).replace(' ', '_')
+    print('DETECTED - ' + now)
+    os.system('cp images/cap.jpg captures/originals/' + now + '.jpg')
+    for i in range(10):
+        now = str(datetime.datetime.now()).replace(' ', '_')
+        os.system('fswebcam -q captures/' + now + '.jpg')
 
 
 main_loop()
